@@ -1,0 +1,46 @@
+import 'dart:async';
+
+import 'package:example/src/domain/entities/task.dart';
+import 'package:example/src/domain/repositories/users_repository.dart';
+
+import '../entities/user.dart';
+import '../repositories/task_repository.dart';
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+
+class GetTaskUseCase
+    extends UseCase<GetUserUseCaseResponse, GetUserUseCaseParams> {
+  final TaskRepository taskRepository;
+  GetTaskUseCase(this.taskRepository);
+
+  @override
+  Future<Stream<GetUserUseCaseResponse>> buildUseCaseStream(
+      GetUserUseCaseParams params) async {
+    final controller = StreamController<GetUserUseCaseResponse>();
+    try {
+      // get user
+      final user = await taskRepository.getUser(params.uid);
+      // Adding it triggers the .onNext() in the `Observer`
+      // It is usually better to wrap the reponse inside a respose object.
+      controller.add(GetUserUseCaseResponse(user));
+      logger.finest('GetUserUseCase successful.');
+      controller.close();
+    } catch (e) {
+      logger.severe('GetUserUseCase unsuccessful.');
+      // Trigger .onError
+      controller.addError(e);
+    }
+    return controller.stream;
+  }
+}
+
+/// Wrapping params inside an object makes it easier to change later
+class GetTaskUseCaseParams {
+  final String uid;
+  GetTaskUseCaseParams(this.uid);
+}
+
+/// Wrapping response inside an object makes it easier to change later
+class GetTaskUseCaseResponse {
+  final Task task;
+  GetTaskUseCaseResponse(this.task);
+}
