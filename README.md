@@ -660,4 +660,7 @@ Checkout a small example [here](./example/) and a full application built [here](
 ## Authors
 **[Shady Boukhary](https://github.com/ShadyBoukhary)** 
 **[Rafael Monteiro](https://github.com/rafaelcmm)**
+<<<<<<< HEAD
 # addressbook
+=======
+>>>>>>> 51a040a3767928183e0ea371af7a927e38981152
