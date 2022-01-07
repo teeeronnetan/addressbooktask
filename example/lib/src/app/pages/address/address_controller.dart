@@ -10,12 +10,13 @@ class AddressController extends Controller {
   List<Address> get addressList => _addressList;
   final AddressPresenter addressPresenter;
   Address _selectedAddress;
-
+  
   final TextEditingController _editAddressInputController =
       TextEditingController();
   final TextEditingController _addAddressInputController = TextEditingController();
   final TextEditingController _editAddress1InputController =
       TextEditingController();
+  final TextEditingController _addAddress1InputController = TextEditingController();
   final TextEditingController _addAddress2InputController = TextEditingController();
   final TextEditingController _editAddress2InputController =
       TextEditingController();
@@ -25,7 +26,9 @@ class AddressController extends Controller {
   final TextEditingController _addAddress4InputController = TextEditingController();
   final TextEditingController _editAddress4InputController =
       TextEditingController();
-  final TextEditingController _addAddress1InputController = TextEditingController();
+    final TextEditingController _addAddress5InputController = TextEditingController();
+  final TextEditingController _editAddress5InputController =
+      TextEditingController();
 
   TextEditingController get addAddressInputController => _addAddressInputController;
   TextEditingController get editAddressInputController => _editAddressInputController;
@@ -37,6 +40,8 @@ class AddressController extends Controller {
   TextEditingController get editAddress3InputController => _editAddress3InputController;
   TextEditingController get addAddress4InputController => _addAddress4InputController;
   TextEditingController get editAddress4InputController => _editAddress4InputController;
+  TextEditingController get addAddress5InputController => _addAddress5InputController;
+  TextEditingController get editAddress5InputController => _editAddress5InputController;
 
   // Presenter should always be initialized this way
   AddressController(addressRepo)
@@ -113,12 +118,14 @@ class AddressController extends Controller {
 
   void addAddress() {
     final fname = _addAddressInputController.text.toString();
+    final mname = _addAddress5InputController.text.toString();
     final lname = _addAddress1InputController.text.toString();
     final phonenum = _addAddress2InputController.text.toString();
     final addr = _addAddress3InputController.text.toString();
     final birthdate = _addAddress4InputController.text.toString();
+    final age = -1;
     var uuid = Uuid();
-    addressPresenter.addNewAddress(Address(uuid.v1(),fname,lname,phonenum,addr,birthdate));
+    addressPresenter.addNewAddress(Address(uuid.v1(),fname, mname,lname,phonenum,addr,birthdate, age));
   }
 
   void deleteAddress(Address address) {

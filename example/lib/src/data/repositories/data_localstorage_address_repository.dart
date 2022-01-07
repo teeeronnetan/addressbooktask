@@ -35,6 +35,7 @@ class DataAddressRepository extends AddressRepository {
     addresses.forEach((Address address) {
       if (address.uid == editedAddress.uid) {
         address.fname = editedAddress.fname;
+        address.mname = editedAddress.mname;
         address.lname = editedAddress.lname;
         address.phonenum = editedAddress.phonenum;
         address.addr = editedAddress.addr;
@@ -51,7 +52,7 @@ class DataAddressRepository extends AddressRepository {
     final storageData = jsonDecode(storage.getItem('tyrone'));
     print(storageData);
     storageData.forEach((data) {
-      addresses.add(Address(data['uid'], data['fname'], data['lname'], data['phonenum'], data['addr'], data['birthdate']
+      addresses.add(Address(data['uid'], data['fname'], data['mname'], data['lname'], data['phonenum'], data['addr'], data['birthdate'], data['age']
       //data['lname'], data['phonenum'], data['addr'], data['birthdate']
       ));
     });

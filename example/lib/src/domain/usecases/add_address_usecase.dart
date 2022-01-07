@@ -19,8 +19,8 @@ class AddAddressUseCase
 
     strLength = params.address.fname.length;
 
-    if (strLength <= 5) {
-      controller.addError('ERROR: Address too short!');
+    if (strLength <= 3) {
+      controller.addError('ERROR: Details too short!');
       return controller.stream;
     }
 

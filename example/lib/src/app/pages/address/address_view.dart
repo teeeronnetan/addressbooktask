@@ -73,6 +73,7 @@ List<Widget> createListTileList(context, controller) {
           icon: Icon(Icons.edit),
           onPressed: () {
             controller.editAddressInputController.text = address.fname;
+            controller.editAddress5InputController.text = address.mname;
             controller.editAddress1InputController.text = address.lname;
             controller.editAddress2InputController.text = address.phonenum;
             controller.editAddress3InputController.text = address.addr;
@@ -88,7 +89,7 @@ List<Widget> createListTileList(context, controller) {
           },
         )
       ]),
-      title: Text(address.fname + '/' + address.lname + '/' + address.phonenum + '/' + address.addr + '/' + address.birthdate),
+      title: Text(address.fname + ' ' + address.mname + ' ' + address.lname + '/' + address.phonenum + '/' + address.addr + '/' + address.birthdate),
     ));
   });
   return tileList;
@@ -111,6 +112,15 @@ Future<String> createAlertDialog(
                 controller: isEdit
                 ? controller.editAddressInputController
                 : controller.addAddressInputController,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                            labelText: 'Middle Name',
+                            labelStyle: TextStyle(fontSize: 19)
+                        ),
+                controller: isEdit
+                ? controller.editAddress5InputController
+                : controller.addAddress5InputController,
               ),
               TextField(
                 decoration: InputDecoration(
@@ -141,7 +151,7 @@ Future<String> createAlertDialog(
               ),
               TextField(
                 decoration: InputDecoration(
-                            labelText: 'Birthdate',
+                            labelText: 'Birthdate (dd-mm-yyyy)',
                             labelStyle: TextStyle(fontSize: 19)
                         ),
                 controller: isEdit
@@ -157,8 +167,7 @@ Future<String> createAlertDialog(
           //       : controller.addAddressInputController,
           // ),
           actions: <Widget>[
-            MaterialButton(
-              elevation: 5.0,
+            ElevatedButton(
               child: Text(isEdit ? 'Edit Details' : 'Add Details'),
               onPressed: () {
                 if (isEdit) {
