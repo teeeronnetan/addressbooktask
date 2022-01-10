@@ -1,9 +1,17 @@
 import 'package:example/src/app/pages/address/address_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
+// import 'package:firebase_options.dart';
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized;
+  await Firebase.initializeApp(
+    // options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
+} 
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "998637569736",
+    "project_id": "addressbook-beb4d",
+    "storage_bucket": "addressbook-beb4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998637569736:android:7e5a4ae048ff1779c087fd",
+        "android_client_info": {
+          "package_name": "com.example.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998637569736-rj8uq4jbas0dns5et0a70g72q3nfllov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvSzrm5p5e8T-JmQDNlM5UOIoijsnIH0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998637569736-rj8uq4jbas0dns5et0a70g72q3nfllov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
