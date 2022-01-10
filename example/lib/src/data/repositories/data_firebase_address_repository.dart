@@ -29,16 +29,16 @@ class DataAddressRepository extends AddressRepository {
   @override
   Future<List<Address>> getAllAddress() async {
     // await storage.ready;
-    final dataList = <Address>[];
-    final data = await _mainCollection.get();
-    data.docs.forEach((doc) {
+    final addressList = <Address>[];
+    final address = await _mainCollection.get();
+    address.docs.forEach((doc) {
       final returnedAddress =
           Address(doc.id, doc.get('fname'), doc.get('mname'), doc.get('lname'), doc.get('phonenum'), doc.get('addr'), doc.get('birthdate'), doc.get('age'));
-      dataList.add(returnedAddress);
+      addressList.add(returnedAddress);
       print(returnedAddress);
     });
 
-    return dataList;
+    return addressList;
   }
 
   @override
