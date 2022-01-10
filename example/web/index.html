@@ -1,12 +1,20 @@
+<!DOCTYPE html>
 <html>
-  ...
-  <body>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<head>
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="site_pass">
+  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <title>flutter_clean_architecture - Example</title>
+</head>
+<body id="app-container">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
 
-    <!-- Firebase Configuration -->
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyBDqyO8-XeiAUKqlg35dxJiSVxNpNSGToE",
+  <script>
+    var firebaseConfig = {
+  apiKey: "AIzaSyBDqyO8-XeiAUKqlg35dxJiSVxNpNSGToE",
         authDomain: "project-addressbook-29b7f.firebaseapp.com",
         databaseURL: "https://project-addressbook-29b7f.firebaseio.com",
         projectId: "project-addressbook-29b7f",
@@ -14,11 +22,9 @@
         messagingSenderId: "802031205718",
         appId: "1:802031205718:web:4477c31e538d8c98812af7",
         measurementId: "G-0HEK1VNXWF"
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-
-  </body>
+    };
+    const app = initializeApp(firebaseConfig);
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
 </html>
