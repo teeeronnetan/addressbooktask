@@ -9,7 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class DataAddressRepository extends AddressRepository {
   // singleton
   final CollectionReference _mainCollection =
-      FirebaseFirestore.instance.collection('addressBook');
+      FirebaseFirestore.instance.collection('AddressBook');
 
   List<Address> addresses = <Address>[];
 
