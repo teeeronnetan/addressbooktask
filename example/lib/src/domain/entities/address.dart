@@ -10,6 +10,6 @@ class Address{
 
   Address(this.uid, this.fname, this.mname, this.lname, this.phonenum, this.addr, this.birthdate, this.age);
 
-  Map toJson() => {'fname': fname, 'mname': mname, 'lname':lname, 'phonenum':phonenum, 'addr':addr, 'birthdate':birthdate, 'age':age};
+  Map<String, dynamic> toJson() => {'fname': fname, 'mname': mname, 'lname':lname, 'phonenum':phonenum, 'addr':addr, 'birthdate':birthdate, 'age':age};
   
 }
